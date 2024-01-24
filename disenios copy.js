@@ -211,121 +211,15 @@ function renderHTMLWithStyles(propertyListings) {
     // Iterar sobre las propiedades y agregarlas al contenedor con enlaces a páginas detalladas
     propertyListings.forEach(property => {
         html += `
-        <div class="property-card">
-
-        <figure class="card-banner">
-
-          <a href="/propiedades/${property.propertyid}">
-            <img src="${property.imagelink1}" alt="New Apartment Nice View" class="w-100">
-          </a>
-
-          <div class="card-badge green">${property.tipo}</div>
-
-          <div class="banner-actions">
-
-            <button class="banner-actions-btn">
-              <ion-icon name="location" role="img" class="md hydrated" aria-label="location"></ion-icon>
-
-              <address>${property.location}, ${property.city}</address>
-            </button>
-
-            <button class="banner-actions-btn">
-              <ion-icon name="camera" role="img" class="md hydrated" aria-label="camera"></ion-icon>
-
-              <span>4</span>
-            </button>
-
-            <button class="banner-actions-btn">
-              <ion-icon name="film" role="img" class="md hydrated" aria-label="film"></ion-icon>
-
-              <span>2</span>
-            </button>
-
-          </div>
-
-        </figure>
-
-        <div class="card-content">
-
-          <div class="card-price">
-            <strong>$${property.price}</strong>/Month
-          </div>
-
-          <h3 class="h3 card-title">
-            <a href="/propiedades/${property.propertyid}">${property.title}</a>
-          </h3>
-
-          <p class="card-text">
-          ${property.description}
-          </p>
-
-          <ul class="card-list">
-
-            <li class="card-item">
-              <strong>${property.bedrooms}</strong>
-
-              <ion-icon name="bed-outline" role="img" class="md hydrated" aria-label="bed outline"></ion-icon>
-
-              <span>Bedrooms</span>
-            </li>
-
-            <li class="card-item">
-              <strong>${property.bathrooms}</strong>
-
-              <ion-icon name="man-outline" role="img" class="md hydrated" aria-label="man outline"></ion-icon>
-
-              <span>Bathrooms</span>
-            </li>
-
-            <li class="card-item">
-              <strong>${property.area} m²</strong>
-
-              <ion-icon name="square-outline" role="img" class="md hydrated" aria-label="square outline"></ion-icon>
-
-              <span>Area</span>
-            </li>
-
-          </ul>
-
-        </div>
-
-        <div class="card-footer">
-
-          <div class="card-author">
-
-            <figure class="author-avatar">
-              <img src="./assets/images/author.jpg" alt="William Seklo" class="w-100">
-            </figure>
-
-            <div>
-              <p class="author-name">
-                <a href="#">German Kramer</a>
-              </p>
-
-              <p class="author-title">Estate Agents</p>
+            <div class="property">
+            <img src="${property.imagelink1}" alt="${property.title}" width='300px'>
+                <h3><a href="/propiedades/${property.propertyid}">${property.title}</a></h3>
+                <p><strong>Location:</strong> ${property.location}</p>
+                <p><strong>Precio:</strong> $${property.price}</p>
+                <p><strong>Tipo:</strong> ${property.tipo}</p>
+                <p><strong>Ciudad:</strong> ${property.city}</p>
+                <!-- Agregar más detalles según sea necesario -->
             </div>
-
-          </div>
-
-          <div class="card-footer-actions">
-
-            <button class="card-footer-actions-btn">
-              <ion-icon name="resize-outline" role="img" class="md hydrated" aria-label="resize outline"></ion-icon>
-            </button>
-
-            <button class="card-footer-actions-btn">
-              <ion-icon name="heart-outline" role="img" class="md hydrated" aria-label="heart outline"></ion-icon>
-            </button>
-
-            <button class="card-footer-actions-btn">
-              <ion-icon name="add-circle-outline" role="img" class="md hydrated" aria-label="add circle outline"></ion-icon>
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
         `;
     });
     
