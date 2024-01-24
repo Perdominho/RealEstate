@@ -219,7 +219,9 @@ function renderHTMLWithStyles(propertyListings) {
             <img src="${property.imagelink1}" alt="New Apartment Nice View" class="w-100">
           </a>
 
-          <div class="card-badge green">${property.tipo}</div>
+          <div class="card-badge ${property.tipo === 'venta' ? 'green' : property.tipo === 'alquiler' ? 'orange' : ''}">
+  ${property.tipo}
+</div>
 
           <div class="banner-actions">
 
@@ -248,9 +250,9 @@ function renderHTMLWithStyles(propertyListings) {
         <div class="card-content">
 
           <div class="card-price">
-            <strong>$${property.price}</strong>/Month
-          </div>
-
+            <strong>${property.price}€</strong>${property.tipo === 'alquiler' ? '/Mes' : ''}
+            </div>
+       
           <h3 class="h3 card-title">
             <a href="/propiedades/${property.propertyid}">${property.title}</a>
           </h3>
@@ -280,7 +282,7 @@ function renderHTMLWithStyles(propertyListings) {
             <li class="card-item">
               <strong>${property.area} m²</strong>
 
-              <ion-icon name="square-outline" role="img" class="md hydrated" aria-label="square outline"></ion-icon>
+              
 
               <span>Area</span>
             </li>
