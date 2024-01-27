@@ -7,7 +7,9 @@ function renderHTMLWithStyles(propertyListings) {
     
      // Agregar estilos CSS aquí
     const headerStyles = fs.readFileSync('./public/assets/css/style.css', 'utf8');
+    const spotlight = fs.readFileSync('./public/assets/css/spotlight.min.css', 'utf8');
     html += headerStyles;
+    html += spotlight;
 
     html += `
     .property-grid {
@@ -108,15 +110,11 @@ function renderHTMLWithStyles(propertyListings) {
                     </a>
                 </li>
 
-                <li>
-                    <a href="#" class="header-top-social-link">
-                    <ion-icon name="logo-pinterest"></ion-icon>
-                    </a>
-                </li>
+             
 
                 </ul>
 
-                <button class="header-top-btn">Add Listing</button>
+                <button class="header-top-btn">Vender mi casa</button>
             </div>
 
             </div>
@@ -250,7 +248,8 @@ function renderHTMLWithStyles(propertyListings) {
         <div class="card-content">
 
           <div class="card-price">
-            <strong>${property.price}€</strong>${property.tipo === 'alquiler' ? '/Mes' : ''}
+            <strong>${Number(property.price).toLocaleString('es-ES', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}€</strong>${property.tipo === 'alquiler' ? '/Mes' : ''}
+
             </div>
        
           <h3 class="h3 card-title">
@@ -310,10 +309,7 @@ function renderHTMLWithStyles(propertyListings) {
           </div>
 
           <div class="card-footer-actions">
-
-            <button class="card-footer-actions-btn">
-              <ion-icon name="resize-outline" role="img" class="md hydrated" aria-label="resize outline"></ion-icon>
-            </button>
+          
 
             <button class="card-footer-actions-btn">
               <ion-icon name="heart-outline" role="img" class="md hydrated" aria-label="heart outline"></ion-icon>
@@ -330,7 +326,7 @@ function renderHTMLWithStyles(propertyListings) {
       </div>
         `;
     });
-    
+    html += '<script src="../assets/js/spotlight.min.js"></script>';
     html += '<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>';
     html +=  '<script src="./assets/js/script.js"></script>';
     html += '</div></body></html>';
@@ -340,9 +336,10 @@ function renderHTMLWithStyles(propertyListings) {
 function renderPropertyDetails(property) {
     let html = '<!DOCTYPE html><html><head><style>';
     
-    // Agregar estilos CSS aquí
-   const headerStyles = fs.readFileSync('./public/assets/css/style.css', 'utf8');
+    const headerStyles = fs.readFileSync('./public/assets/css/style.css', 'utf8');
+    const spotlight = fs.readFileSync('./public/assets/css/spotlight.min.css', 'utf8');
     html += headerStyles;
+    html += spotlight;
     html += '</style></head><body>';
     html += `
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -401,16 +398,11 @@ function renderPropertyDetails(property) {
                     <ion-icon name="logo-instagram"></ion-icon>
                     </a>
                 </li>
-
-                <li>
-                    <a href="#" class="header-top-social-link">
-                    <ion-icon name="logo-pinterest"></ion-icon>
-                    </a>
-                </li>
+               
 
                 </ul>
 
-                <button class="header-top-btn">Add Listing</button>
+                <button class="header-top-btn">Vender mi casa</button>
             </div>
 
             </div>
@@ -502,17 +494,38 @@ function renderPropertyDetails(property) {
     // Renderizar la información de la propiedad
     html += `
         <div class="property-details">
-        <img src="${property.imagelink1}" alt="${property.title}">
-        <img src="${property.imagelink2}" alt="${property.title}">
-        <img src="${property.imagelink3}" alt="${property.title}">
-        <img src="${property.imagelink4}" alt="${property.title}">
+        
+        <div class="grid-container">
+    <div class="left-column">
+    <a href="${property.imagelink1}" class="spotlight">
+      <img class="grid-item" src="${property.imagelink1}" alt="${property.title}"></a>
+    </div>
+    <div class="right-column">
+    <a href="${property.imagelink2}" class="spotlight">
+      <img class="grid-item" src="${property.imagelink2}" alt="${property.title}"></a>
+      <a href="${property.imagelink3}" class="spotlight">
+      <img class="grid-item" src="${property.imagelink3}" alt="${property.title}"></a>
+      <a href="${property.imagelink4}" class="spotlight">
+      <img class="grid-item" src="${property.imagelink4}" alt="${property.title}"></a>
+      <a href="${property.imagelink4}" class="spotlight">
+      <img class="grid-item" src="${property.imagelink4}" alt="${property.title}"></a>
+      
+    </div>
+    </div>
+    
             <h2>${property.title}</h2>
             <p><strong>Location:</strong> ${property.location}</p>
-            <p><strong>Price:</strong> $${property.price}</p>
+            <p><strong>Price:</strong>${Number(property.price).toLocaleString('es-ES', { 
+              minimumFractionDigits: 0, maximumFractionDigits: 0 })}€</p>
             <p><strong>Area:</strong> ${property.area} sqft</p>
+            
             <!-- Agregar más detalles según sea necesario -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25624.819981342556!2d-4.701130090270165!3d36.5998403774817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72e12c1263ecaf%3A0xcf5d5c823036e78a!2s29650%20Valtocado%2C%20M%C3%A1laga!5e0!3m2!1sen!2ses!4v1706354740353!5m2!1sen!2ses" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
         </div>
     `;
+    
+    html += '<script src="../assets/js/spotlight.min.js"></script>';
     html += '<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>';
     html +=  '<script src="../assets/js/script.js"></script>';
     html += '</body></html>';
