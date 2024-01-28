@@ -214,11 +214,11 @@ function renderHTMLWithStyles(propertyListings) {
         <figure class="card-banner">
 
           <a href="/propiedades/${property.propertyid}">
-            <img src="${property.imagelink1}" alt="New Apartment Nice View" class="w-100">
+            <img src="${property.imagelink1}" alt="${property.title}" class="w-100">
           </a>
 
-          <div class="card-badge ${property.tipo === 'venta' ? 'green' : property.tipo === 'alquiler' ? 'orange' : ''}">
-  ${property.tipo}
+          <div class="card-badge ${property.venta === 'Venta' ? 'green' : property.venta === 'Alquiler' ? 'orange' : ''}">
+  ${property.venta}
 </div>
 
           <div class="banner-actions">
@@ -348,7 +348,7 @@ function renderPropertyDetails(property) {
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet">
     `;
-    // Añadir el código del encabezado
+    // Header
     html += `
 
         <header class="header" data-header>
@@ -494,12 +494,25 @@ function renderPropertyDetails(property) {
     // Renderizar la información de la propiedad
     html += `
         <div class="property-details">
-        
+        <div class="side-by-side">
+        <p class="paragraph">${property.tipo}</p>
+        <p class="paragraph">${property.venta}</p>
+      </div>
+      <h1 style="margin: 0% 0% 0% 9%;">${property.title}</h1>
+      <button class="banner-actions-btn" style="margin: 0% 0% 0% 9%;">
+              <ion-icon name="location" role="img" class="md hydrated" aria-label="location"></ion-icon>
+
+              <address>${property.location}</address>
+            </button>
         <div class="grid-container">
+
+
     <div class="left-column">
     <a href="${property.imagelink1}" class="spotlight">
       <img class="grid-item" src="${property.imagelink1}" alt="${property.title}"></a>
-    </div>
+
+         </div>
+
     <div class="right-column">
     <a href="${property.imagelink2}" class="spotlight">
       <img class="grid-item" src="${property.imagelink2}" alt="${property.title}"></a>
@@ -510,19 +523,31 @@ function renderPropertyDetails(property) {
       <a href="${property.imagelink4}" class="spotlight">
       <img class="grid-item" src="${property.imagelink4}" alt="${property.title}"></a>
       
-    </div>
-    </div>
+     </div>
+  </div>
+
+         
     
-            <h2>${property.title}</h2>
-            <p><strong>Location:</strong> ${property.location}</p>
-            <p><strong>Price:</strong>${Number(property.price).toLocaleString('es-ES', { 
-              minimumFractionDigits: 0, maximumFractionDigits: 0 })}€</p>
-            <p><strong>Area:</strong> ${property.area} sqft</p>
-            
-            <!-- Agregar más detalles según sea necesario -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25624.819981342556!2d-4.701130090270165!3d36.5998403774817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72e12c1263ecaf%3A0xcf5d5c823036e78a!2s29650%20Valtocado%2C%20M%C3%A1laga!5e0!3m2!1sen!2ses!4v1706354740353!5m2!1sen!2ses" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            
+                 
+          
         </div>
+    
+<div class="grid-container2">
+  <div class="grid-item">
+
+     <div class="descripcion"> 
+     
+    <h2>Descripcion</h2>
+     <p>${property.description}</p>
+           
+</div>
+<iframe src="${property.maps}" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  </div>
+       <div class="grid-item">Columna 2</div>
+</div>
+            
+        
     `;
     
     html += '<script src="../assets/js/spotlight.min.js"></script>';

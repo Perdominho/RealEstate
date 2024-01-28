@@ -765,17 +765,23 @@ button, a { transition: var(--transition); }
 .property-card .card-item span { margin-top: 5px; }
 
 
+.grid-container2 {
+  display: grid;
+  grid-template-columns: 75% 25%; /* Primera columna ocupa el 60%, segunda columna ocupa el 40% */
+  gap: 2px; /* Espacio entre las columnas */
+  
+    margin: 0px 135px 135px 135px; /* top right bottom left */
+   
+ 
+  
+}
+
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
   gap: 2px; /* Espacio entre las columnas */
   
-}
-
-.left-column a img {
-  /* Ajusta el tamaño de la imagen según tus preferencias */
-  /* Puedes probar con: width: 100%; height: 100%; object-fit: cover; */
-  width: 100%; height: 100%; object-fit: cover;
 }
 
 .left-column a {
@@ -813,7 +819,16 @@ button, a { transition: var(--transition); }
 
 
 
-
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Cambia a una sola columna en móviles */
+  }
+  
+  .right-column {
+    grid-column: 1 / span 1; /* La columna de la derecha ocupa una columna en móviles */
+  }
+  
+}
 .card-footer {
   padding: 15px;
   display: flex;
@@ -1693,4 +1708,25 @@ button, a { transition: var(--transition); }
 
   .footer-link-box { flex-basis: 700px; }
 
+}
+
+
+.descripcion { margin: 100px; }
+
+.paragraph { color: var(--orange-soda);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+  padding: 5px 20px;
+  background: hsla(9, 100%, 62%, 0.1);
+  width: max-content;
+  border-radius: 50px;  
+  margin-bottom: 15px;
+}
+.side-by-side {
+  display: flex;
+  margin-left: 8%;
+}
+.side-by-side p {
+  
+  margin-left: 10px;
 }
