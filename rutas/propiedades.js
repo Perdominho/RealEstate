@@ -1,6 +1,6 @@
 // property-controller.js
 
-const { renderHTMLWithStyles } = require('../disenios');
+const { renderHTMLWithStyles } = require('../archpropiedades');
 const db = require('../db');
 
 async function getAllProperties(req, res) {

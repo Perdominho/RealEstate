@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Rutas
 app.get('/buscar', async (req, res) => {
     const { query } = req.query;
-    const result = await db.query('SELECT * FROM PropertyListings WHERE LOWER(titulo) LIKE LOWER($1)', ['%' + query + '%']);
+    const result = await db.query('SELECT * FROM PropertyListings WHERE LOWER(title) LIKE LOWER($1)', ['%' + query + '%']);
     res.json(result.rows);
 });
 

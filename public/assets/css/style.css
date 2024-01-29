@@ -798,6 +798,18 @@ button, a { transition: var(--transition); }
   padding: 0;
 }
 
+.right-column a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.right-column a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
 
 
 .left-column {
@@ -1730,3 +1742,26 @@ button, a { transition: var(--transition); }
   
   margin-left: 10px;
 }
+
+
+.contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0% 9% 0% 9%;
+}
+
+.banner-actions-btn1 {
+  color: var(--orange-soda);
+  font-size: var(--fs-6);
+  line-height: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.banner-actions-btn1 ion-icon { font-size: 18px; }
+
+.banner-actions-btn1:first-child { margin-right: auto; }
+
+.banner-actions-btn1:is(:hover, :focus) { color: var(--orange-soda); }

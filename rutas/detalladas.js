@@ -1,6 +1,6 @@
 // property-controller.js
 
-const { renderPropertyDetails } = require('../disenios');
+const { renderPropertyDetails } = require('../inmueble');
 const db = require('../db');
 
 async function getPropertyDetails(req, res) {

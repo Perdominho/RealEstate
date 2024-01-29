@@ -6,6 +6,6 @@ const router = express.Router();
 // Ruta '/propiedades'
 router.get('/propiedades', propertyControl.getAllProperties);
 // Ruta para las páginas detalladas
-router.get('/propiedades/:propertyid', propertyController.getPropertyDetails);
+router.get('/propiedades/inmueble/:propertyid', propertyController.getPropertyDetails);
 
 module.exports = router;
