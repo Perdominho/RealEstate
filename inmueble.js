@@ -92,7 +92,7 @@ function renderPropertyDetails(property) {
                 <div class="navbar-top">
 
                 <a href="/" class="logo">
-                    <img src="../assets/images/logo.png" alt="Homeverse logo">
+                    <img src="../../assets/images/logo.png" alt="Homeverse logo">
                 </a>
 
                 <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
@@ -109,11 +109,11 @@ function renderPropertyDetails(property) {
                     </li>
 
                     <li>
-                    <a href="#about" class="navbar-link" data-nav-link>Sobre nosotros</a>
+                    <a href="../../#about" class="navbar-link" data-nav-link>Sobre nosotros</a>
                     </li>
 
                     <li>
-                    <a href="#service" class="navbar-link" data-nav-link>Servicios</a>
+                    <a href="../../#service" class="navbar-link" data-nav-link>Servicios</a>
                     </li>
 
                     <li>
@@ -121,7 +121,7 @@ function renderPropertyDetails(property) {
                     </li>
                    
                     <li>
-                    <a href="#contact" class="navbar-link" data-nav-link>Contacto</a>
+                    <a href="../../#contact" class="navbar-link" data-nav-link>Contacto</a>
                     </li>
 
                 </ul>

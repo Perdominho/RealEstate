@@ -152,11 +152,11 @@ function renderHTMLWithStyles(propertyListings) {
                     </li>
 
                     <li>
-                    <a href="#about" class="navbar-link" data-nav-link>Sobre nosotros</a>
+                    <a href="../#about" class="navbar-link" data-nav-link>Sobre nosotros</a>
                     </li>
 
                     <li>
-                    <a href="#service" class="navbar-link" data-nav-link>Servicios</a>
+                    <a href="../#service" class="navbar-link" data-nav-link>Servicios</a>
                     </li>
 
                     <li>
@@ -164,7 +164,7 @@ function renderHTMLWithStyles(propertyListings) {
                     </li>
                    
                     <li>
-                    <a href="#contact" class="navbar-link" data-nav-link>Contacto</a>
+                    <a href="./#contact" class="navbar-link" data-nav-link>Contacto</a>
                     </li>
 
                 </ul>
