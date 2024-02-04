@@ -212,11 +212,11 @@ function renderPropertyDetails({ property, similarProperties }) {
           </div>
         </li>
       `).join('')}
-      ${footer()}
+     
     </ul>
   </div>
 </section>
-${footer()}
+
 </div>
 </div>
         
@@ -226,8 +226,8 @@ ${footer()}
     html += '<script src="../../assets/js/spotlight.min.js"></script>';
     html += '<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>';
     html +=  '<script src="../../assets/js/script.js"></script>';
-    html += '< ${footer()}>';
-    html += '</body></html>';
+     html += '</body></html>'
+    html += `${footer()}`;;
     return html;
 }
 
