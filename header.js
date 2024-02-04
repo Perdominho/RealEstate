@@ -4,7 +4,7 @@ function generateHeader() {
     <!-- 
     - #HEADER
   -->
-
+  <base href="/" />
   <header class="header" data-header>
 
     <div class="overlay" data-overlay></div>
@@ -65,7 +65,7 @@ function generateHeader() {
     <div class="header-bottom">
       <div class="container">
 
-        <a href="#" class="logo">
+        <a href="/" class="logo">
           <img src="./assets/images/logo.png" alt="Homeverse logo">
         </a>
 

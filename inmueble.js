@@ -11,7 +11,7 @@ function renderPropertyDetails({ property, similarProperties }) {
     const spotlight = fs.readFileSync('./public/assets/css/spotlight.min.css', 'utf8');
     html += headerStyles;
     html += spotlight;
-    html += '</style></head><body>';
+    html += '</style></head><body><base href="/" />';
     html += `
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
